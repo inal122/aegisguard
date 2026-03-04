@@ -1,0 +1,81 @@
+# AegisGuard Config - Author: inal12
+# Sunucunuzu grief ve saldirganlardan korumak için gelismis ayarlar.
+
+settings:
+  prefix: "&e&lAegis&6&lGuard &8» &f"
+  
+# Antigrief ve Patlama Engelleme
+antigrief:
+  block-tnt-explosion: true
+  block-creeper-explosion: true
+  block-wither-spawn: true
+  block-dragon-spawn: true
+  block-end-crystal-explosion: true
+  block-fire-spread: true
+  block-lava-flow-nether-only: false
+  block-tnt-minecart: true
+
+# Chat Koruma (Spam Engelleme)
+chat-protection:
+  enabled: true
+  cooldown: 3 # Saniye
+  message: "&cChati kullanmak için &e%seconds% &csaniye beklemelisiniz!"
+  blocked-words:
+    - "nigger"
+    - "kufür1"
+    - "kufür2"
+
+# Komut Koruma (Command Spam)
+command-protection:
+  enabled: true
+  cooldown: 3 # Saniye
+  message: "&cKomut kullanmak için &e%seconds% &csaniye beklemelisiniz!"
+  blocked-commands:
+    - "/pl"
+    - "/plugins"
+    - "/ver"
+    - "/version"
+    - "/?"
+
+# Anti-Bot Koruma
+antibot:
+  enabled: true
+  limit-per-ip: 1
+  kick-message: "&cSunucumuzda bir IP adresi üzerinden en fazla &e%limit% &chesap açilabilir!"
+  min-join-delay: 1000 # Milisaniye
+
+# Moderasyon Yardimcisi
+mod-tools:
+  command-spy: true
+  spy-format: "&8[&eSpy&8] &b%player%: &f%command%"
+
+# GELİŞMİŞ GÜVENLİK (Anti-Hack)
+security:
+  # Sadece bu listedeki isimler /op, /stop, /reload gibi komutları kullanabilir.
+  # Buraya KENDİ ADINI yazmayı unutma!
+  super-admins:
+    - "oyuncu"
+    - "oyuncu2"
+  # /bukkit:me, /minecraft:pl gibi komut geçişlerini tamamen engeller.
+  block-colon-commands: true
+  # Belirlenen kişiler dışında birisi OP olursa anında yetkisini alır.
+  auto-deop-unauthorized: true
+  kick-unauthorized-op: true
+  unauthorized-msg: "&c&lHATA! &7Yetkisiz OP denemesi tespit edildi ve engellendi!"
+
+# VELOCITY / BUNGEECORD DESTEĞİ
+velocity:
+  enabled: false
+  # Sadece bu IP'den gelen bağlantıları kabul eder (Velocity IP'niz)
+  # Genelde 127.0.0.1 (aynı makinedeyse) veya Velocity sunucusunun IPsi.
+  proxy-ip: "127.0.0.1"
+  # Alternatif: BungeeGuard gibi bir gizli anahtar (Opsiyonel)
+  proxy-secret: "AEGIS-GUARD-SECRET-KEY"
+  # Proxy harici girişi engelleme mesajı
+  kick-message: "&cLütfen sunucumuza ana IP üzerinden bağlanın! (Velocity Bypass Engellendi)"
+
+# Mesajlar
+messages:
+  no-permission: "&cBu komutu kullanmak için yetkiniz yok!"
+  reload: "&aYapilandirma dosyasi basariyla yenilendi."
+  invalid-args: "&cHatali kullanim: /aegisguard <reload|status>"

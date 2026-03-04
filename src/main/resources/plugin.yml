@@ -1,0 +1,21 @@
+name: AegisGuard
+version: 1.2.0
+main: me.inal12.aegisguard.AegisGuard
+api-version: 1.20
+author: inal12
+description: Advanced Server Protection Plugin.
+commands:
+  aegisguard:
+    usage: /aegisguard <reload|status>
+    description: Main command for AegisGuard.
+    aliases: [guard, ag]
+permissions:
+  aegisguard.admin:
+    description: Admin permission for AegisGuard.
+    default: op
+  aegisguard.bypass.chatslow:
+    description: Bypass chat cooldown.
+    default: op
+  aegisguard.bypass.commandslow:
+    description: Bypass command cooldown.
+    default: op
